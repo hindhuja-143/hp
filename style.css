@@ -1,0 +1,1254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --gold: #d6b66c;
+
+    --gold-light: #f4df9b;
+
+    --dark: #06040a;
+
+    --purple: #171020;
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #21172f 0%,
+            #0d0913 45%,
+            #040307 100%
+        );
+
+    color: white;
+
+    font-family: "Inter", sans-serif;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(110, 70, 170, 0.12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(200, 150, 60, 0.08),
+            transparent 30%
+        );
+
+}
+
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+#particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+
+.particle {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #f5d985;
+
+    box-shadow:
+        0 0 8px #f5d985;
+
+    animation:
+        floatParticle linear infinite;
+
+    opacity: 0;
+
+}
+
+
+@keyframes floatParticle {
+
+    0% {
+
+        transform:
+            translateY(100vh)
+            translateX(0);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: 1;
+
+    }
+
+    90% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-10vh)
+            translateX(80px);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================
+   SCREEN
+========================================= */
+
+.screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    z-index: 5;
+
+}
+
+
+.screen.active {
+
+    display: flex;
+
+}
+
+
+/* =========================================
+   START SCREEN
+========================================= */
+
+.start-content {
+
+    text-align: center;
+
+    max-width: 800px;
+
+    animation: fadeUp 1s ease;
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.small-heading {
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 7px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.main-title {
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(48px, 9vw, 95px);
+
+    line-height: 0.95;
+
+    letter-spacing: 7px;
+
+    color: #f1d88e;
+
+    text-shadow:
+
+        0 0 20px rgba(214,182,108,0.15),
+
+        0 0 60px rgba(214,182,108,0.08);
+
+}
+
+
+.main-title span {
+
+    display: block;
+
+    color: #fff5cf;
+
+}
+
+
+.ornament {
+
+    margin: 22px 0;
+
+    color: #9e8552;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* =========================================
+   SORTING HAT
+========================================= */
+
+.sorting-hat {
+
+    position: relative;
+
+    width: 120px;
+
+    height: 130px;
+
+    margin: auto;
+
+}
+
+
+.hat-top {
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 105px;
+
+    left: 15px;
+
+    top: 0;
+
+    background:
+
+        linear-gradient(
+            100deg,
+            #151016,
+            #32262f,
+            #100c12
+        );
+
+    clip-path: polygon(
+        50% 0%,
+        70% 32%,
+        82% 63%,
+        100% 88%,
+        82% 92%,
+        18% 92%,
+        0% 88%,
+        20% 65%,
+        32% 30%
+    );
+
+    filter:
+
+        drop-shadow(
+            0 0 12px rgba(0,0,0,0.8)
+        );
+
+}
+
+
+.hat-face {
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 48px;
+
+    left: 10px;
+
+    bottom: 20px;
+
+    background: #2a2028;
+
+    border-radius: 45%;
+
+    transform: rotate(-2deg);
+
+}
+
+
+.eye {
+
+    position: absolute;
+
+    width: 16px;
+
+    height: 5px;
+
+    background: #d7b96d;
+
+    border-radius: 50%;
+
+    top: 16px;
+
+    box-shadow:
+        0 0 8px #d7b96d;
+
+}
+
+
+.eye.left {
+
+    left: 22px;
+
+    transform: rotate(12deg);
+
+}
+
+
+.eye.right {
+
+    right: 22px;
+
+    transform: rotate(-12deg);
+
+}
+
+
+.hat-mouth {
+
+    position: absolute;
+
+    width: 48px;
+
+    height: 18px;
+
+    left: 36px;
+
+    bottom: 23px;
+
+    border-bottom: 3px solid #0c080c;
+
+    border-radius: 50%;
+
+}
+
+
+.start-hat {
+
+    transform: scale(1.2);
+
+    margin-top: 30px;
+
+    animation:
+        hatFloat 3s ease-in-out infinite;
+
+}
+
+
+@keyframes hatFloat {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotate(-2deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px)
+            rotate(2deg);
+
+    }
+
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.welcome-text {
+
+    color: #d5d0d8;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    margin: 15px 0 25px;
+
+}
+
+
+.welcome-text span {
+
+    color: #817985;
+
+}
+
+
+.hint {
+
+    margin-top: 15px;
+
+    color: #625b67;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================
+   MAGIC BUTTON
+========================================= */
+
+.magic-button {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 25px;
+
+    border: 1px solid #a78b4f;
+
+    border-radius: 5px;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            rgba(214,182,108,0.04),
+            rgba(214,182,108,0.12)
+        );
+
+    color: #e7cc85;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition: 0.35s;
+
+}
+
+
+.magic-button b {
+
+    font-size: 16px;
+
+}
+
+
+.magic-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.2),
+            transparent
+        );
+
+    transition: 0.6s;
+
+}
+
+
+.magic-button:hover::before {
+
+    left: 100%;
+
+}
+
+
+.magic-button:hover {
+
+    background: #d6b66c;
+
+    color: #09060b;
+
+    box-shadow:
+        0 0 30px rgba(214,182,108,0.3);
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================================
+   QUIZ
+========================================= */
+
+.quiz-wrapper {
+
+    width: min(850px, 100%);
+
+    animation: fadeUp 0.6s ease;
+
+}
+
+
+.quiz-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.question-counter {
+
+    min-width: 70px;
+
+    color: #d8b96c;
+
+    font-family: "Cinzel", serif;
+
+}
+
+
+.question-counter span {
+
+    font-size: 28px;
+
+}
+
+
+.question-counter small {
+
+    color: #665d69;
+
+}
+
+
+.progress-wrapper {
+
+    flex: 1;
+
+}
+
+
+.progress-track {
+
+    width: 100%;
+
+    height: 3px;
+
+    background: rgba(255,255,255,0.1);
+
+}
+
+
+#progressBar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #765a2d,
+        #f2d98e
+    );
+
+    transition: width 0.5s;
+
+}
+
+
+.quiz-hat {
+
+    margin-bottom: 15px;
+
+}
+
+
+.small-hat {
+
+    transform: scale(0.55);
+
+    transform-origin: center;
+
+    margin-top: -25px;
+
+    margin-bottom: -20px;
+
+}
+
+
+.question-box {
+
+    text-align: center;
+
+}
+
+
+.question-label {
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #a38a55;
+
+    margin-bottom: 15px;
+
+}
+
+
+#question {
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(23px, 4vw, 34px);
+
+    line-height: 1.4;
+
+    color: #f1e8d2;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =========================================
+   ANSWERS
+========================================= */
+
+.answers {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+}
+
+
+.answer-btn {
+
+    position: relative;
+
+    min-height: 90px;
+
+    padding: 18px 20px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.05),
+            rgba(255,255,255,0.015)
+        );
+
+    color: #d9d4dc;
+
+    font-family: "Inter", sans-serif;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.answer-btn::before {
+
+    content: "✦";
+
+    color: #a68a50;
+
+    margin-right: 12px;
+
+}
+
+
+.answer-btn:hover {
+
+    border-color: #c6a75f;
+
+    background:
+        rgba(198,167,95,0.08);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.3);
+
+}
+
+
+/* =========================================
+   THINKING SCREEN
+========================================= */
+
+.thinking-content {
+
+    text-align: center;
+
+}
+
+
+.giant-hat {
+
+    transform: scale(1.7);
+
+    animation:
+        hatFloat 2s ease-in-out infinite;
+
+}
+
+
+.thinking-label {
+
+    color: #a99059;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    margin-top: 40px;
+
+}
+
+
+.thinking-content h2 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 45px;
+
+    margin: 10px;
+
+    color: #f0d68a;
+
+}
+
+
+.thinking-subtext {
+
+    color: #716976;
+
+    font-size: 13px;
+
+}
+
+
+.magic-orbit {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 25px;
+
+}
+
+
+.magic-orbit span {
+
+    color: #e1c777;
+
+    animation:
+        orbitPulse 1.5s infinite;
+
+}
+
+
+.magic-orbit span:nth-child(2) {
+
+    animation-delay: .2s;
+
+}
+
+
+.magic-orbit span:nth-child(3) {
+
+    animation-delay: .4s;
+
+}
+
+
+.magic-orbit span:nth-child(4) {
+
+    animation-delay: .6s;
+
+}
+
+
+@keyframes orbitPulse {
+
+    0%, 100% {
+
+        opacity: .2;
+
+        transform: scale(.7);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.4);
+
+    }
+
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.result-content {
+
+    text-align: center;
+
+    max-width: 650px;
+
+    padding: 45px;
+
+    border: 1px solid rgba(214,182,108,0.22);
+
+    border-radius: 15px;
+
+    background:
+        rgba(10,7,14,0.55);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 0 80px rgba(0,0,0,0.5);
+
+    animation: resultReveal 1.2s ease;
+
+}
+
+
+@keyframes resultReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(.65)
+            rotateX(15deg);
+
+    }
+
+    70% {
+
+        transform:
+            scale(1.04);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotateX(0);
+
+    }
+
+}
+
+
+.result-small {
+
+    color: #b29458;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.result-crest {
+
+    font-size: 100px;
+
+    margin: 20px 0;
+
+    animation:
+        crestAppear 1s ease;
+
+}
+
+
+@keyframes crestAppear {
+
+    from {
+
+        transform:
+            scale(.2)
+            rotate(-30deg);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform:
+            scale(1)
+            rotate(0);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.you-belong {
+
+    color: #756c79;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+#houseName {
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(40px, 8vw, 70px);
+
+    letter-spacing: 6px;
+
+    margin-top: 8px;
+
+    color: #f1d888;
+
+}
+
+
+.gold-line {
+
+    width: 100px;
+
+    height: 2px;
+
+    background: #c9a65d;
+
+    margin: 20px auto;
+
+}
+
+
+.house-description {
+
+    color: #b7b0ba;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+}
+
+
+.trait-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin: 25px 0 30px;
+
+}
+
+
+.trait {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border: 1px solid rgba(214,182,108,0.25);
+
+    border-radius: 20px;
+
+    padding: 8px 14px;
+
+    color: #d2bd84;
+
+    font-size: 12px;
+
+}
+
+
+.trait span {
+
+    color: #d9bb69;
+
+}
+
+
+/* =========================================
+   HOUSE THEMES
+========================================= */
+
+body.gryffindor #houseName {
+
+    color: #e2a63c;
+
+    text-shadow:
+        0 0 30px rgba(180,60,20,0.5);
+
+}
+
+
+body.slytherin #houseName {
+
+    color: #6ec58b;
+
+    text-shadow:
+        0 0 30px rgba(40,160,90,0.5);
+
+}
+
+
+body.ravenclaw #houseName {
+
+    color: #7db8e8;
+
+    text-shadow:
+        0 0 30px rgba(50,120,200,0.5);
+
+}
+
+
+body.hufflepuff #houseName {
+
+    color: #e2ca4d;
+
+    text-shadow:
+        0 0 30px rgba(220,180,30,0.5);
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    body {
+
+        overflow-y: auto;
+
+    }
+
+
+    .screen {
+
+        min-height: 100vh;
+
+        position: absolute;
+
+        padding: 20px;
+
+    }
+
+
+    .small-heading {
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .main-title {
+
+        font-size: 47px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .answers {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .answer-btn {
+
+        min-height: 70px;
+
+    }
+
+
+    .quiz-header {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    #question {
+
+        font-size: 22px;
+
+    }
+
+
+    .result-content {
+
+        padding: 25px 18px;
+
+    }
+
+
+    .result-crest {
+
+        font-size: 75px;
+
+    }
+
+
+    #houseName {
+
+        font-size: 38px;
+
+        letter-spacing: 3px;
+
+    }
+
+}
+

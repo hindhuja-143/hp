@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The House Ceremony</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+        
+
+
+
+</head>
+
+<body>
+
+    <!-- Magical background -->
+    <div class="background"></div>
+
+    <!-- Particles -->
+    <div id="particles"></div>
+
+
+    <!-- ======================================
+         START SCREEN
+    ======================================= -->
+
+    <section id="startScreen" class="screen active">
+
+        <div class="start-content">
+
+            <div class="small-heading">
+                THE WIZARDING CEREMONY
+            </div>
+
+            <h1 class="main-title">
+                THE HOUSE
+                <span>SELECTION</span>
+            </h1>
+
+            <div class="ornament">
+                ✦ ───────── ✦ ───────── ✦
+            </div>
+
+            <div class="sorting-hat start-hat">
+                <div class="hat-top"></div>
+                <div class="hat-face">
+                    <span class="eye left"></span>
+                    <span class="eye right"></span>
+                </div>
+                <div class="hat-mouth"></div>
+            </div>
+
+            <p class="welcome-text">
+                Four houses await you.
+                <br>
+                <span>The Sorting Hat will decide where you belong.</span>
+            </p>
+
+            <button id="startBtn" class="magic-button">
+                <span>BEGIN THE CEREMONY</span>
+                <b>✦</b>
+            </button>
+
+            <p class="hint">
+                Answer honestly. The Hat sees more than you think...
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         QUIZ SCREEN
+    ======================================= -->
+
+    <section id="quizScreen" class="screen">
+
+        <div class="quiz-wrapper">
+
+            <div class="quiz-header">
+
+                <div class="question-counter">
+                    <span id="questionNumber">01</span>
+                    <small>/ 07</small>
+                </div>
+
+                <div class="progress-wrapper">
+
+                    <div class="progress-track">
+                        <div id="progressBar"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="quiz-hat">
+
+                <div class="sorting-hat small-hat">
+                    <div class="hat-top"></div>
+
+                    <div class="hat-face">
+                        <span class="eye left"></span>
+                        <span class="eye right"></span>
+                    </div>
+
+                    <div class="hat-mouth"></div>
+                </div>
+
+            </div>
+
+
+            <div class="question-box">
+
+                <p class="question-label">
+                    THE SORTING HAT ASKS
+                </p>
+
+                <h2 id="question">
+                    Question
+                </h2>
+
+            </div>
+
+
+            <div id="answers" class="answers">
+                <!-- JavaScript adds answers -->
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         THINKING SCREEN
+    ======================================= -->
+
+    <section id="thinkingScreen" class="screen">
+
+        <div class="thinking-content">
+
+            <div class="large-hat">
+
+                <div class="sorting-hat giant-hat">
+
+                    <div class="hat-top"></div>
+
+                    <div class="hat-face">
+                        <span class="eye left"></span>
+                        <span class="eye right"></span>
+                    </div>
+
+                    <div class="hat-mouth"></div>
+
+                </div>
+
+            </div>
+
+            <p class="thinking-label">
+                THE SORTING HAT IS THINKING
+            </p>
+
+            <h2 id="thinkingText">
+                Hmm...
+            </h2>
+
+            <div class="magic-orbit">
+
+                <span>✦</span>
+                <span>✧</span>
+                <span>✦</span>
+                <span>✧</span>
+
+            </div>
+
+            <p class="thinking-subtext">
+                Your choices are being considered...
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         RESULT SCREEN
+    ======================================= -->
+
+    <section id="resultScreen" class="screen">
+
+        <div class="result-content">
+
+            <p class="result-small">
+                THE SORTING HAT HAS SPOKEN
+            </p>
+
+            <div class="result-crest" id="resultCrest">
+                🦁
+            </div>
+
+            <p class="you-belong">
+                YOU BELONG TO
+            </p>
+
+            <h1 id="houseName">
+                GRYFFINDOR
+            </h1>
+
+            <div class="gold-line"></div>
+
+            <p id="houseDescription" class="house-description">
+                Description
+            </p>
+
+
+            <div class="trait-container">
+
+                <div class="trait">
+                    <span>✦</span>
+                    <p id="trait1">Brave</p>
+                </div>
+
+                <div class="trait">
+                    <span>✦</span>
+                    <p id="trait2">Courageous</p>
+                </div>
+
+                <div class="trait">
+                    <span>✦</span>
+                    <p id="trait3">Determined</p>
+                </div>
+
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button id="restartBtn" class="magic-button">
+                    <span>CHOOSE AGAIN</span>
+                    <b>↻</b>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
